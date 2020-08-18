@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<linked_list.h>
+#include<data_structures.h>
 
 LinkedList create_linked_list(){
     LinkedList *list = (LinkedList*)malloc(sizeof(LinkedList));
@@ -13,7 +13,7 @@ int get_linked_list_length(LinkedList *list){
         return 0;
     } else {
         int length = 1;
-        LinkedListNode *node = list->head;
+        ListNode *node = list->head;
         while (node->next != NULL){
             length++;
             node = node->next;
@@ -24,7 +24,7 @@ int get_linked_list_length(LinkedList *list){
 
 int search_element(LinkedList *list, int value){
     int current_position = 0;
-    LinkedListNode *node = list->head;
+    ListNode *node = list->head;
     while (node != NULL){
         if (node->data == value){
             return current_position;
@@ -36,7 +36,7 @@ int search_element(LinkedList *list, int value){
 }
 
 void print_linked_list(LinkedList *list){
-    LinkedListNode *node;
+    ListNode *node;
     printf("[");
     for(node=list->head; node!=NULL; node=node->next){
         printf(node==list->head ? "%d" : ", %d", node->data);
@@ -45,12 +45,12 @@ void print_linked_list(LinkedList *list){
 }
 
 void insert_at_end(LinkedList *list, int data){
-    LinkedListNode *new_node = (LinkedListNode*)malloc(sizeof(LinkedListNode));
+    ListNode *new_node = (ListNode*)malloc(sizeof(ListNode));
     new_node->data = data;
     if (list->head == NULL){
         list->head = new_node;
     } else {
-        LinkedListNode *node = list->head;
+        ListNode *node = list->head;
         while (node->next != NULL){
             node=node->next;
         }
@@ -59,7 +59,7 @@ void insert_at_end(LinkedList *list, int data){
 }
 
 void insert_at_head(LinkedList *list, int data){
-    LinkedListNode *new_head = (LinkedListNode*)malloc(sizeof(LinkedListNode));
+    ListNode *new_head = (ListNode*)malloc(sizeof(ListNode));
     new_head->data = data;
     new_head->next = list->head;
     list->head = new_head;
@@ -74,7 +74,7 @@ void delete(LinkedList *list, int position){
         exit(EXIT_FAILURE);
     } else {
         int current_position = 0;
-        LinkedListNode *node = list->head;
+        ListNode *node = list->head;
         while(current_position != position - 1){
             node=node->next;
             current_position += 1;
@@ -91,6 +91,6 @@ void delete_at_head(LinkedList *list){
     list->head = list->head->next;
 }
 
-bool is_empty(LinkedList *list){
-    return list->head == NULL ? False : True;
+bool is_linked_list_empty(LinkedList *list){
+    return list->head == NULL ? True : False;
 }
