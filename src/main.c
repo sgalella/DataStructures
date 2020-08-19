@@ -23,6 +23,19 @@ int main(int argc, char **argv){
     print_queue(&queue);
     dequeue(&queue);
     print_queue(&queue); 
+
+    // Stack example
+    printf("\nStack example: \n");
+    Stack stack = create_stack();
+    push(&stack, 5);
+    push(&stack, 13);
+    print_stack(&stack);
+    pop(&stack);
+    print_stack(&stack);
+
+
+
+
     return 0;
 
 }
