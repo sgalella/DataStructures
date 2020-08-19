@@ -15,6 +15,8 @@ typedef struct LinkedList {
     struct ListNode *head;
 } LinkedList;
 
+typedef LinkedList Queue;
+
 LinkedList create_linked_list();
 int get_linked_list_length(LinkedList *list);
 int search_element(LinkedList *list, int value);
@@ -24,5 +26,12 @@ void insert_at_head(LinkedList *list, int data);
 void delete(LinkedList *list, int position);
 void delete_at_head(LinkedList *list);
 bool is_linked_list_empty(LinkedList *list);
+
+Queue create_queue();
+int get_queue_length(Queue *queue);
+void print_queue(Queue *queue);
+void enqueue(Queue *queue, int data);
+int dequeue(Queue *queue);
+bool is_queue_empty(Queue *queue);
 
 #endif
