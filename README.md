@@ -1,9 +1,14 @@
 # Data Structures
-Library of data structures implemented in C. Current data structrures:
+Library of [data structures](https://en.wikipedia.org/wiki/List_of_data_structures) implemented in C. Current data structrures:
 
-<p align="center">
-    <img width="289" height="223" src="images/table.png">
-</p>
+1. [Linked List](https://en.wikipedia.org/wiki/Linked_list)
+
+2. [Stack](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+
+3. [Queue](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+
+   
+
 
 ## Installation
 
